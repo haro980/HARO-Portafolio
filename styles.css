@@ -1,0 +1,155 @@
+:root {
+  background-color: #0f172a;
+  --fondo-secundario: #1e293b;
+  --morado: #8b5cf6;
+  --celeste: #38bdf8;
+  --blanco: #f8fafc;
+  --gris: #94a3b8;
+}
+.inicio h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.inicio p {
+  font-size: 22px;
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--fondo);
+  color: var(--blanco);
+}
+nav {
+  background-color: #111827;
+  padding: 18px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: 0.3s;
+}
+
+nav a i {
+  color: #38bdf8;
+  margin-right: 6px;
+}
+
+nav a:hover {
+  color: #8b5cf6;
+}
+.inicio {
+  background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+  padding: 60px 20px;
+  color: white;
+}
+
+.habilidades {
+  background-color: var(--fondo-secundario);
+  padding: 50px 20px;
+}
+
+.contacto {
+  background: linear-gradient(135deg, #1e293b, #312e81);
+  padding: 50px 20px;
+}
+.habilidades-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.habilidad {
+  background-color: #1e293b;
+  width: 130px;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.habilidad i {
+  font-size: 45px;
+  color: #38bdf8;
+}
+
+.habilidad:hover {
+  transform: translateY(-8px);
+  background-color: #334155;
+}
+
+.habilidad:hover i {
+  color: #8b5cf6;
+}
+#proyectos {
+  padding: 60px 20px;
+}
+
+.proyecto-card {
+  display: inline-block;
+  vertical-align: top;
+  background-color: #1e293b;
+  width: 280px;
+  margin: 15px;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: left;
+  transition: 0.3s;
+  border: 1px solid #334155;
+}
+
+.proyecto-card:hover {
+  transform: translateY(-8px);
+  border-color: #8b5cf6;
+}
+
+.icono-proyecto {
+  font-size: 35px;
+  color: #38bdf8;
+}
+
+.proyecto-card a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+.contacto-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  margin: 8px;
+  background-color: #0f172a;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contacto-links a i {
+  color: #38bdf8;
+  font-size: 20px;
+}
+
+.contacto-links a:hover {
+  background-color: #8b5cf6;
+  transform: translateY(-3px);
+}
