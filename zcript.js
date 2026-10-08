@@ -664,72 +664,87 @@ function moverParticula() {
 moverParticula();
 
 
-// ======================================================
-// 7. BARRA DESLIZANTE DEL MENÚ
-// ======================================================
+// 7. BARRA DEL MENÚ
+const enlacesMenu = document.querySelectorAll("header nav a");
 
-const enlacesMenu =
-    document.querySelectorAll("header nav a");
+const barraMenu = document.createElement("div");
 
-const barraMenu =
-    document.createElement("div");
-
-barraMenu.style.position =
-    "fixed";
-
-barraMenu.style.height =
-    "3px";
-
-barraMenu.style.backgroundColor =
-    "#38bdf8";
-
-barraMenu.style.borderRadius =
-    "5px";
-
-barraMenu.style.pointerEvents =
-    "none";
-
-barraMenu.style.zIndex =
-    "9999";
-
+barraMenu.style.position = "fixed";
+barraMenu.style.height = "3px";
+barraMenu.style.backgroundColor = "#38bdf8";
+barraMenu.style.borderRadius = "5px";
+barraMenu.style.pointerEvents = "none";
+barraMenu.style.zIndex = "9999";
 barraMenu.style.transition =
-    "left 0.35s ease, " +
-    "width 0.35s ease";
+    "left 0.35s ease, width 0.35s ease, top 0.35s ease";
+barraMenu.style.opacity = "0";
 
-barraMenu.style.opacity =
-    "0";
-
-document.body.appendChild(
-    barraMenu
-);
+document.body.appendChild(barraMenu);
 
 
+// Función para colocar la barra debajo de un enlace
+function moverBarraMenu(enlace) {
+
+    if (!enlace) {
+        barraMenu.style.opacity = "0";
+        return;
+    }
+
+    const rect = enlace.getBoundingClientRect();
+
+    barraMenu.style.left = rect.left + "px";
+    barraMenu.style.top = (rect.bottom + 6) + "px";
+    barraMenu.style.width = rect.width + "px";
+    barraMenu.style.opacity = "1";
+}
+
+
+// Cuando pasamos el mouse
 enlacesMenu.forEach(function(enlace) {
 
-    enlace.addEventListener(
-        "mouseenter",
-        function() {
+    enlace.addEventListener("mouseenter", function() {
+        moverBarraMenu(enlace);
+    });
 
-            const rect =
-                enlace.getBoundingClientRect();
+    // Cuando hacemos clic
+    enlace.addEventListener("click", function() {
 
-            barraMenu.style.left =
-                rect.left + "px";
+        // Esperamos a que termine el desplazamiento
+        setTimeout(function() {
+            moverBarraMenu(enlace);
+        }, 400);
 
-            barraMenu.style.top =
-                (rect.bottom + 6) + "px";
-
-            barraMenu.style.width =
-                rect.width + "px";
-
-            barraMenu.style.opacity =
-                "1";
-
-        }
-    );
+    });
 
 });
 
+
+// Cuando hacemos scroll, mantener la barra
+window.addEventListener("scroll", function() {
+
+    const enlaceActivo = document.querySelector(
+        "header nav a[style*='rgb(139, 92, 246)']"
+    );
+
+    if (enlaceActivo) {
+        moverBarraMenu(enlaceActivo);
+    }
+
+});
+
+
+// Cuando cambia el tamaño de la ventana
+window.addEventListener("resize", function() {
+
+    const enlaceActivo = document.querySelector(
+        "header nav a[style*='rgb(139, 92, 246)']"
+    );
+
+    if (enlaceActivo) {
+        moverBarraMenu(enlaceActivo);
+    }
+
+});
 
 // ======================================================
 // 8. SECCIÓN ACTIVA DEL MENÚ
