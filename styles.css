@@ -521,3 +521,310 @@ header h1 {
   }
 
 }
+/* ========================================= */
+/* RESPONSIVE GENERAL DEL PORTFOLIO          */
+/* ========================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* ========================================= */
+/* MENÚ                                      */
+/* ========================================= */
+
+header nav {
+    width: 100%;
+    max-width: 100%;
+}
+
+header nav a {
+    display: inline-block;
+}
+
+/* ========================================= */
+/* PRESENTACIÓN                              */
+/* ========================================= */
+
+.inicio {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* ========================================= */
+/* HABILIDADES                               */
+/* ========================================= */
+
+.habilidades {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.habilidades-grid {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* ========================================= */
+/* PROYECTOS                                 */
+/* ========================================= */
+
+#proyectos {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.proyectos-grid {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.proyecto-card {
+    box-sizing: border-box;
+}
+
+/* ========================================= */
+/* CONTACTO                                  */
+/* ========================================= */
+
+.contacto {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contacto-links {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ========================================= */
+/* TABLET                                    */
+/* ========================================= */
+
+@media screen and (max-width: 768px) {
+
+    .inicio {
+        padding: 45px 15px;
+    }
+
+    .inicio h1 {
+        font-size: 40px;
+    }
+
+    .inicio p {
+        font-size: 20px;
+    }
+
+    header nav {
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    header nav a {
+        margin: 7px 8px;
+    }
+
+    .habilidades {
+        padding: 45px 15px;
+    }
+
+    .habilidades-grid {
+        gap: 20px;
+    }
+
+    #proyectos {
+        padding: 50px 15px;
+    }
+
+    .proyectos-grid {
+        gap: 5px;
+    }
+
+    .proyecto-card {
+        width: 280px;
+    }
+
+}
+
+/* ========================================= */
+/* CELULAR                                   */
+/* ========================================= */
+
+@media screen and (max-width: 600px) {
+
+    .inicio {
+        padding: 40px 15px;
+    }
+
+    .inicio h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .inicio p {
+        font-size: 18px;
+    }
+
+    .avatar {
+        width: 110px;
+        height: 110px;
+    }
+
+    /* Menú */
+
+    header nav {
+        padding: 12px 8px;
+    }
+
+    header nav a {
+        margin: 6px 4px;
+        font-size: 14px;
+    }
+
+    header nav a i {
+        margin-right: 3px;
+    }
+
+    /* Habilidades */
+
+    .habilidades {
+        padding: 40px 10px;
+    }
+
+    .habilidades-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 130px));
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .habilidad {
+        width: 100%;
+        max-width: 130px;
+        padding: 20px 10px;
+        margin: 0 auto;
+    }
+
+    /* Proyectos */
+
+    #proyectos {
+        padding: 40px 10px;
+    }
+
+    .proyectos-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .proyecto-card {
+        width: calc(100% - 20px);
+        max-width: 350px;
+        margin: 10px;
+    }
+
+    /* Contacto */
+
+    .contacto {
+        padding: 40px 10px;
+    }
+
+    .contacto-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contacto-links a {
+        width: calc(100% - 30px);
+        max-width: 320px;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+
+}
+
+/* ========================================= */
+/* CELULAR PEQUEÑO                          */
+/* ========================================= */
+
+@media screen and (max-width: 400px) {
+
+    .inicio h1 {
+        font-size: 28px;
+    }
+
+    .inicio p {
+        font-size: 16px;
+    }
+
+    .avatar {
+        width: 95px;
+        height: 95px;
+    }
+
+    header nav a {
+        font-size: 13px;
+        margin: 5px 2px;
+    }
+
+    .habilidades-grid {
+        grid-template-columns: repeat(2, minmax(0, 115px));
+        gap: 10px;
+    }
+
+    .habilidad {
+        max-width: 115px;
+        padding: 18px 8px;
+    }
+
+    .habilidad i {
+        font-size: 35px;
+    }
+
+    .proyecto-card {
+        width: calc(100% - 10px);
+        padding: 20px;
+    }
+
+}
+
+/* ========================================= */
+/* PANTALLAS MUY PEQUEÑAS                    */
+/* ========================================= */
+
+@media screen and (max-width: 320px) {
+
+    .inicio h1 {
+        font-size: 25px;
+    }
+
+    header nav a {
+        font-size: 12px;
+    }
+
+    .habilidades-grid {
+        grid-template-columns: repeat(2, minmax(0, 105px));
+    }
+
+}
